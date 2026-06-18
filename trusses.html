@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trusses · Standard Yoke</title>
+<meta name="description" content="MiTek-approved Timber and Ultra Span roof truss systems engineered and manufactured in KwaZulu-Natal.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* Page hero */
+.page-hero { padding: 56px 0 0; background: var(--white); }
+.page-hero .container { position: relative; }
+.page-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 56px; gap: 16px; flex-wrap: wrap;
+}
+.page-meta .crumb a { color: var(--mute); }
+.page-meta .crumb a:hover { color: var(--ink); }
+.page-meta .id { color: var(--mute); }
+.page-meta .blink { width: 8px; height: 8px; background: var(--sky); display: inline-block; border-radius: 50%; }
+
+.page-title {
+  display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end;
+  padding-bottom: 56px; border-bottom: 1px solid var(--ink);
+}
+.page-title h1 {
+  font-family: var(--f-display); font-size: clamp(64px, 11vw, 168px);
+  line-height: .85; letter-spacing: -0.02em; text-transform: uppercase;
+}
+.page-title h1 .yoke { color: var(--yoke); }
+.page-title .lede { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 36ch; }
+.page-title .ix { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--mute); margin-bottom: 12px; }
+
+@media (max-width: 900px) {
+  .page-title { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* System card (Timber & Ultra Span) */
+.system {
+  border: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 0;
+  background: var(--white);
+  margin-bottom: 56px;
+}
+.system + .system { margin-bottom: 0; }
+.system .stage {
+  background: var(--snow);
+  border-right: 1px solid var(--ink);
+  padding: 56px 48px;
+  position: relative;
+  min-height: 480px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.system .stage .stage-meta {
+  display: flex; justify-content: space-between;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--mute);
+}
+.system .stage .stage-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: auto;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--mute);
+}
+.system .info { padding: 48px; display: flex; flex-direction: column; gap: 24px; }
+.system .info .ix { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--mute); }
+.system .info h2 { font-family: var(--f-display); font-size: clamp(48px, 6vw, 80px); line-height: .9; text-transform: uppercase; }
+.system .info h2 .yoke { color: var(--yoke); }
+.system .info p { color: var(--ink-2); }
+
+.system-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+
+@media (max-width: 900px) {
+  .system { grid-template-columns: 1fr; }
+  .system .stage { border-right: 0; border-bottom: 1px solid var(--ink); padding: 32px 24px; min-height: 360px; }
+  .system .info { padding: 32px 24px; }
+}
+
+/* Spec grid */
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--ink);
+  background: var(--white);
+}
+.spec-grid .cell {
+  padding: 24px 20px;
+  border-left: 1px solid var(--hair);
+  border-top: 1px solid var(--hair);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.spec-grid .cell:nth-child(-n+4) { border-top: 0; }
+.spec-grid .cell:nth-child(4n+1) { border-left: 0; }
+.spec-grid .lbl { font-family: var(--f-mono); font-size: 10px; letter-spacing: .12em; color: var(--mute); text-transform: uppercase; }
+.spec-grid .val { font-family: var(--f-display); font-size: 28px; line-height: 1; }
+.spec-grid .unit { font-family: var(--f-mono); font-size: 11px; color: var(--mute); }
+
+@media (max-width: 900px) {
+  .spec-grid { grid-template-columns: 1fr 1fr; }
+  .spec-grid .cell { border-left: 0 !important; border-top: 1px solid var(--hair) !important; }
+  .spec-grid .cell:nth-child(odd) { border-left: 0 !important; }
+  .spec-grid .cell:nth-child(2n+1) { border-left: 0 !important; }
+}
+
+/* Process steps */
+.process {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+  border: 1px solid var(--ink);
+}
+.process .step {
+  padding: 32px 24px;
+  border-left: 1px solid var(--ink);
+  display: flex; flex-direction: column; gap: 12px;
+  position: relative;
+}
+.process .step:first-child { border-left: 0; }
+.process .step .n { font-family: var(--f-display); font-size: 40px; line-height: 1; color: var(--yoke); }
+.process .step .lbl { font-family: var(--f-mono); font-size: 10px; letter-spacing: .12em; color: var(--mute); text-transform: uppercase; }
+.process .step .title { font-family: var(--f-sans); font-weight: 800; font-size: 16px; }
+.process .step p { font-size: 13px; color: var(--ink-2); line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .process { grid-template-columns: 1fr 1fr; }
+  .process .step { border-left: 0; border-top: 1px solid var(--ink); }
+  .process .step:nth-child(-n+2) { border-top: 0; }
+  .process .step:nth-child(2n+1) { border-left: 0; }
+  .process .step:nth-child(2n) { border-left: 1px solid var(--ink); }
+}
+@media (max-width: 600px) {
+  .process { grid-template-columns: 1fr; }
+  .process .step { border-left: 0 !important; border-top: 1px solid var(--ink) !important; }
+  .process .step:first-child { border-top: 0 !important; }
+}
+
+/* Truss diagram (re-used styles from index) */
+.truss-svg { width: 100%; height: auto; }
+.truss-svg .chord, .truss-svg .web, .truss-svg .dim-line { fill: none; stroke-linecap: square; }
+.truss-svg .chord { stroke-width: 3; }
+.truss-svg .web { stroke-width: 2; }
+.truss-svg .dim-line { stroke-width: 1; }
+.truss-svg .label { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; fill: currentColor; text-transform: uppercase; }
+.truss-svg .joint { fill: var(--sky); stroke: currentColor; stroke-width: 1; }
+
+@keyframes drawIn { to { stroke-dashoffset: 0; } }
+@keyframes fadeIn { from { opacity: 0;} to { opacity: 1;} }
+@keyframes pulseDot { 0%, 100% { r: 5; opacity: 1; } 50% { r: 7; opacity: .5; } }
+
+.truss-svg .chord, .truss-svg .web, .truss-svg .dim-line {
+  stroke-dasharray: 1000; stroke-dashoffset: 1000;
+  animation: drawIn 1.6s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.truss-svg .web { animation-delay: .45s; }
+.truss-svg .dim-line { animation-delay: 1.4s; }
+.truss-svg .label, .truss-svg .joint { opacity: 0; animation: fadeIn .6s forwards; animation-delay: 1.8s; }
+.truss-svg .joint { animation: pulseDot 3.4s ease-in-out infinite; animation-delay: 2.6s; }
+
+/* Why Ultra Span — benefit band (dark surface) */
+.us-benefits {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--white); background: var(--ink-2); color: var(--white);
+}
+.us-benefits .ub {
+  padding: 28px 24px;
+  border-left: 1px solid rgba(255,255,255,.18);
+  border-top: 1px solid rgba(255,255,255,.18);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.us-benefits .ub:nth-child(-n+3) { border-top: 0; }
+.us-benefits .ub:nth-child(3n+1) { border-left: 0; }
+.us-benefits .ub-n { font-family: var(--f-display); font-size: 40px; line-height: 1; color: var(--sky); }
+.us-benefits .ub-n small { font-family: var(--f-mono); font-size: 12px; color: var(--hair-2); margin-left: 4px; letter-spacing: .04em; }
+.us-benefits .ub-l { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--hair-2); }
+.us-benefits .ub p { font-size: 13px; line-height: 1.5; color: var(--hair-2); }
+@media (max-width: 900px) {
+  .us-benefits { grid-template-columns: 1fr 1fr; }
+  .us-benefits .ub { border-left: 0 !important; border-top: 1px solid rgba(255,255,255,.18) !important; }
+  .us-benefits .ub:nth-child(-n+2) { border-top: 0 !important; }
+  .us-benefits .ub:nth-child(2n+1) { border-left: 0 !important; }
+}
+@media (max-width: 600px) {
+  .us-benefits { grid-template-columns: 1fr; }
+  .us-benefits .ub { border-left: 0 !important; }
+}
+</style>
+</head>
+<body data-screen-label="Trusses">
+
+<div id="sy-header"></div>
+
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-meta">
+      <div class="crumb"><a href="index.html">Standard Yoke</a> &nbsp;/&nbsp; <span style="color:var(--ink)">Trusses</span></div>
+      <div class="id">SY/PROD · TRUSSES · 2026Q2</div>
+    </div>
+
+    <div class="page-title">
+      <div>
+        <div class="ix">04 / TRUSSES</div>
+        <h1>Engineered<br>roof trusses.<br><span class="yoke">Mitek approved.</span></h1>
+      </div>
+      <div>
+        <p class="lede">Timber and light-gauge steel roof trusses for residential, commercial and industrial roofs across KwaZulu-Natal. MiTek-approved manufacturing, engineered to SANS, built to spec.</p>
+        <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">
+          <a class="btn" href="contact.html">Request a quote <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="#process">View process</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     System 01 — Timber Trusses
+     ========================================================= -->
+<section id="timber" data-screen-label="Timber">
+  <div class="container">
+    <div class="section-head">
+      <div class="num"><span>SYS-A</span> &nbsp; TIMBER ROOF TRUSSES</div>
+      <div class="meta">DRG · TIMBER · MITEK</div>
+    </div>
+
+    <article class="system">
+      <div class="stage">
+        <div class="stage-meta">
+          <span>DRG-027.5 · TIMBER FAN</span>
+          <span>SY/PMB/Q2-014</span>
+        </div>
+        <div id="timber-svg" style="flex:1; display:flex; align-items:center;"></div>
+        <div class="stage-bottom">
+          <span>SPAN · 9000mm</span>
+          <span>PITCH · 27.5°</span>
+          <span>SPACING · 760mm</span>
+        </div>
+      </div>
+      <div class="info">
+        <div class="ix">01 / SYSTEM</div>
+        <h2>Timber<br>Trusses</h2>
+        <p>Engineered timber roof trusses for residential and light-commercial roofs. Specified by builders, contractors and homeowners across KZN. Manufactured in our Pietermaritzburg factory under MiTek-approved processes. ITC-SA member — A19 Engineer's Certificate available on request.</p>
+        <ul style="display:grid;gap:8px;font-size:14px;color:var(--ink-2)">
+          <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px dashed var(--hair)"><span style="color:var(--sky)">✓</span> MiTek galvanised nail-plate connectors</li>
+          <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px dashed var(--hair)"><span style="color:var(--sky)">✓</span> Graded SA pine — S5 / S7 to SANS 1783</li>
+          <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px dashed var(--hair)"><span style="color:var(--sky)">✓</span> Engineered to SANS 10243</li>
+          <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px dashed var(--hair);border-bottom:1px dashed var(--hair)"><span style="color:var(--sky)">✓</span> ITC-SA member · A19 cert on request</li>
+        </ul>
+        <div class="system-cta">
+          <a class="btn" href="contact.html?type=timber">Quote on timber <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="https://wa.me/27743849722">WhatsApp estimates</a>
+        </div>
+      </div>
+    </article>
+
+    <div style="margin-top:56px">
+      <div class="mono" style="margin-bottom:14px;color:var(--mute)">SPEC · TIMBER</div>
+      <div class="spec-grid">
+        <div class="cell"><span class="lbl">Span range</span><span class="val">up to 18m</span><span class="unit">— max economical</span></div>
+        <div class="cell"><span class="lbl">Pitch range</span><span class="val">15° – 45°</span><span class="unit">— other on request</span></div>
+        <div class="cell"><span class="lbl">Plate</span><span class="val">MiTek</span><span class="unit">— galvanised</span></div>
+        <div class="cell"><span class="lbl">Lead time</span><span class="val">5 – 10 days</span><span class="unit">— working days</span></div>
+        <div class="cell"><span class="lbl">Spacing</span><span class="val">760mm</span><span class="unit">— standard</span></div>
+        <div class="cell"><span class="lbl">Timber grade</span><span class="val">S5 / S7</span><span class="unit">— SA pine</span></div>
+        <div class="cell"><span class="lbl">Treatment</span><span class="val">H2 / H3</span><span class="unit">— CCA</span></div>
+        <div class="cell"><span class="lbl">Delivery</span><span class="val">KZN</span><span class="unit">— ex-PMB</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     System 02 — Ultra Span Steel Trusses
+     ========================================================= -->
+<section id="ultraspan" class="surface--ink" data-screen-label="Ultra Span">
+  <div class="container">
+    <div class="section-head" style="border-color:var(--white)">
+      <div class="num" style="color:var(--white)"><span style="color:var(--hair-2)">SYS-B</span> &nbsp; <span class="yoke" style="color:var(--sky)">ULTRA SPAN</span> STEEL TRUSSES</div>
+      <div class="meta" style="color:var(--hair-2)">DRG · ULTRA SPAN · MITEK</div>
+    </div>
+
+    <article class="system" style="border-color:var(--white); background:var(--ink); color:var(--white)">
+      <div class="stage" style="background:var(--ink-2); border-right-color:var(--white)">
+        <div class="stage-meta" style="color:var(--hair-2)">
+          <span>DRG-022 · LIGHT-GAUGE STEEL</span>
+          <span>SY/PMB/Q2-027</span>
+        </div>
+        <div id="us-svg" style="flex:1; display:flex; align-items:center; color:#fff;"></div>
+        <div class="stage-bottom" style="color:var(--hair-2)">
+          <span>SPAN · 14000mm</span>
+          <span>PITCH · 22°</span>
+          <span>GAUGE · 1.0mm</span>
+        </div>
+      </div>
+      <div class="info" style="color:var(--white)">
+        <div class="ix" style="color:var(--hair-2)">02 / SYSTEM</div>
+        <h2><span style="color:var(--sky)">Ultra Span</span><br>Steel Trusses</h2>
+        <p style="color:var(--hair-2)">Light-gauge steel roof trusses on MiTek Ultra Span profiles. Clear spans up to 40m, dimensional stability, no warp or shrinkage. From affordable housing to large commercial structures — and increasingly residential where timber reaches its limits.</p>
+        <ul style="display:grid;gap:8px;font-size:14px;color:var(--hair-2)">
+          <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px dashed rgba(255,255,255,.15)"><span style="color:var(--sky)">✓</span> G550 hi-tensile light-gauge steel</li>
+          <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px dashed rgba(255,255,255,.15)"><span style="color:var(--sky)">✓</span> MiTek Ultra Span proprietary profiles</li>
+          <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px dashed rgba(255,255,255,.15)"><span style="color:var(--sky)">✓</span> Non-combustible · no warp · no shrink</li>
+          <li style="display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px dashed rgba(255,255,255,.15);border-bottom:1px dashed rgba(255,255,255,.15)"><span style="color:var(--sky)">✓</span> ITC-SA member · A19 Engineer's Cert on request</li>
+        </ul>
+        <div class="system-cta">
+          <a class="btn btn--white" href="contact.html?type=ultraspan">Quote on Ultra Span <span class="arrow">→</span></a>
+          <a class="btn btn--white" style="background:transparent;color:var(--white);border-color:var(--white)" href="https://wa.me/27743849722">WhatsApp estimates</a>
+        </div>
+      </div>
+    </article>
+
+    <div style="margin-top:56px">
+      <div class="mono" style="margin-bottom:14px;color:var(--hair-2)">SPEC · ULTRA SPAN</div>
+      <div class="spec-grid" style="border-color:var(--white); background:var(--ink-2); color:var(--white)">
+        <div class="cell"><span class="lbl" style="color:var(--hair-2)">Span range</span><span class="val" style="color:var(--white)">up to 40m</span><span class="unit" style="color:var(--hair-2)">— clear span</span></div>
+        <div class="cell"><span class="lbl" style="color:var(--hair-2)">Material</span><span class="val" style="color:var(--white)">G550</span><span class="unit" style="color:var(--hair-2)">— hi-tensile</span></div>
+        <div class="cell"><span class="lbl" style="color:var(--hair-2)">Profile</span><span class="val" style="color:var(--white)">Ultra Span</span><span class="unit" style="color:var(--hair-2)">— MiTek</span></div>
+        <div class="cell"><span class="lbl" style="color:var(--hair-2)">Lead time</span><span class="val" style="color:var(--white)">7 – 12 days</span><span class="unit" style="color:var(--hair-2)">— working days</span></div>
+        <div class="cell"><span class="lbl" style="color:var(--hair-2)">Gauge</span><span class="val" style="color:var(--white)">0.8 – 1.2</span><span class="unit" style="color:var(--hair-2)">— mm</span></div>
+        <div class="cell"><span class="lbl" style="color:var(--hair-2)">Coating</span><span class="val" style="color:var(--white)">AZ150</span><span class="unit" style="color:var(--hair-2)">— zinc/alu</span></div>
+        <div class="cell"><span class="lbl" style="color:var(--hair-2)">Application</span><span class="val" style="color:var(--white)">Comm + Ind</span><span class="unit" style="color:var(--hair-2)">— and residential</span></div>
+        <div class="cell"><span class="lbl" style="color:var(--hair-2)">Delivery</span><span class="val" style="color:var(--white)">KZN</span><span class="unit" style="color:var(--hair-2)">— ex-PMB</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:56px">
+      <div class="mono" style="margin-bottom:14px;color:var(--hair-2)">WHY ULTRA SPAN · LIGHT GAUGE STEEL</div>
+      <div class="us-benefits">
+        <div class="ub"><span class="ub-n">40m</span><span class="ub-l">Clear span</span><p>From affordable housing to large commercial structures — one system.</p></div>
+        <div class="ub"><span class="ub-n">2–10<small>kg/m²</small></span><span class="ub-l">Low mass</span><p>Lighter roof loads cut the supporting structure, transport and erection costs.</p></div>
+        <div class="ub"><span class="ub-n">100%</span><span class="ub-l">Non-combustible</span><p>Prime galvanised steel — vermin proof, resistant to borer and fungus.</p></div>
+        <div class="ub"><span class="ub-n">1-side</span><span class="ub-l">Fabrication</span><p>Screw-fixed from one side with battery tools — on site or in factory.</p></div>
+        <div class="ub"><span class="ub-n">1000<small>m²/day</small></span><span class="ub-l">Crane install</span><p>Large sections pre-assembled on the ground and hoisted into position.</p></div>
+        <div class="ub"><span class="ub-n">PAMIR</span><span class="ub-l">Engineered</span><p>Designed and costed in MiTek Pamir with full bracing and connection docs.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     Process — How a job moves
+     ========================================================= -->
+<section id="process" data-screen-label="Process">
+  <div class="container">
+    <div class="section-head">
+      <div class="num"><span>05</span> &nbsp; HOW A JOB MOVES</div>
+      <div class="meta">SY/OPS · 05 STEPS</div>
+    </div>
+
+    <div class="process">
+      <div class="step">
+        <span class="n">01</span>
+        <span class="lbl">STEP 01</span>
+        <span class="title">Enquiry</span>
+        <p>Send plans or a sketch. WhatsApp, email or quote form.</p>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <span class="lbl">STEP 02</span>
+        <span class="title">Engineer</span>
+        <p>We design and engineer the layout in MiTek PAMIR software.</p>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <span class="lbl">STEP 03</span>
+        <span class="title">Quote</span>
+        <p>Itemised quote with lead time, delivery and supporting docs.</p>
+      </div>
+      <div class="step">
+        <span class="n">04</span>
+        <span class="lbl">STEP 04</span>
+        <span class="title">Manufacture</span>
+        <p>Built in our PMB factory under MiTek-approved processes.</p>
+      </div>
+      <div class="step">
+        <span class="n">05</span>
+        <span class="lbl">STEP 05</span>
+        <span class="title">Deliver</span>
+        <p>On the truck, on schedule, to your KZN site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CTA strip
+     ========================================================= -->
+<section class="surface--snow compact" data-screen-label="CTA">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;padding:20px 0;flex-wrap:wrap">
+      <div>
+        <div class="mono" style="color:var(--mute);margin-bottom:8px">SY/CONTACT · ROOFING + TRUSS</div>
+        <h2 class="h2">Quote a roof. <span style="color:var(--yoke)">On the truck. On schedule.</span></h2>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn" href="contact.html">Request a quote <span class="arrow">→</span></a>
+        <a class="btn btn--ghost" href="https://wa.me/27743849722">WhatsApp estimates</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="sy-footer"></div>
+
+<script>
+function trussDiagram(opts) {
+  opts = opts || {};
+  const dark = !!opts.dark;
+  const w = 900, h = 360;
+  const px = 60, py = 280, qx = 840;
+  const apex = { x: (px + qx)/2, y: 60 };
+  const pL = { x: px, y: py }, pR = { x: qx, y: py }, tA = apex;
+  const tL1 = { x: (pL.x+tA.x)/2, y: (pL.y+tA.y)/2 };
+  const tR1 = { x: (pR.x+tA.x)/2, y: (pR.y+tA.y)/2 };
+  const bL1 = { x: pL.x + (pR.x-pL.x)*0.25, y: py };
+  const bR1 = { x: pL.x + (pR.x-pL.x)*0.75, y: py };
+  const fg = dark ? '#ffffff' : '#0F172A';
+  const dim = dark ? 'rgba(255,255,255,.55)' : '#64748B';
+  let svg = `<svg class="truss-svg" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" style="color:${fg}">`;
+  svg += `<g><path class="dim-line" stroke="${dim}" d="M ${pL.x} ${py+30} L ${pR.x} ${py+30}"/></g>`;
+  svg += `<path class="chord" stroke="${fg}" d="M ${pL.x} ${pL.y} L ${tA.x} ${tA.y} L ${pR.x} ${pR.y}"/>`;
+  svg += `<path class="chord" stroke="${fg}" d="M ${pL.x} ${pL.y} L ${pR.x} ${pR.y}"/>`;
+  svg += `<path class="web" stroke="${fg}" d="M ${tA.x} ${tA.y} L ${tA.x} ${py}"/>`;
+  svg += `<path class="web" stroke="${fg}" d="M ${tL1.x} ${tL1.y} L ${bL1.x} ${bL1.y}"/>`;
+  svg += `<path class="web" stroke="${fg}" d="M ${tR1.x} ${tR1.y} L ${bR1.x} ${bR1.y}"/>`;
+  svg += `<path class="web" stroke="${fg}" d="M ${bL1.x} ${bL1.y} L ${tA.x} ${tA.y}"/>`;
+  svg += `<path class="web" stroke="${fg}" d="M ${bR1.x} ${bR1.y} L ${tA.x} ${tA.y}"/>`;
+  [{x:tA.x,y:tA.y},{x:tA.x,y:py},{x:bL1.x,y:bL1.y},{x:bR1.x,y:bR1.y}].forEach(j=>{
+    svg += `<circle class="joint" cx="${j.x}" cy="${j.y}" r="5" fill="#2563EB" stroke="${fg}"/>`;
+  });
+  svg += `<text class="label" x="${(pL.x+pR.x)/2}" y="${py+50}" text-anchor="middle" fill="${dim}">SPAN</text>`;
+  svg += `</svg>`;
+  return svg;
+}
+document.getElementById('timber-svg').innerHTML = trussDiagram({});
+document.getElementById('us-svg').innerHTML = trussDiagram({ dark: true });
+</script>
+
+<script src="sy.js"></script>
+<script>SY.init({ active: 'trusses' });</script>
+
+</body>
+</html>

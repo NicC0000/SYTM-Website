@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About · Standard Yoke</title>
+<meta name="description" content="Standard Yoke — KwaZulu-Natal roof truss manufacturer and building material supplier since 1968.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+.page-hero { padding: 56px 0 0; }
+.page-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 56px; gap: 16px; flex-wrap: wrap;
+}
+.page-meta .crumb a { color: var(--mute); }
+
+.page-title {
+  display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end;
+  padding-bottom: 56px; border-bottom: 1px solid var(--ink);
+}
+.page-title h1 { font-family: var(--f-display); font-size: clamp(64px, 11vw, 168px); line-height: .85; text-transform: uppercase; }
+.page-title h1 .yoke { color: var(--yoke); }
+.page-title .lede { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 36ch; }
+.page-title .ix { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--mute); margin-bottom: 12px; }
+@media (max-width: 900px) { .page-title { grid-template-columns: 1fr; gap: 24px; } }
+
+.story {
+  display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start;
+}
+.story .meta { font-family: var(--f-mono); font-size: 11px; color: var(--mute); letter-spacing: .1em; }
+.story h2 { font-family: var(--f-display); font-size: clamp(36px, 5vw, 72px); line-height: .95; text-transform: uppercase; }
+.story h2 .yoke { color: var(--yoke); }
+.story p { font-size: 17px; line-height: 1.65; color: var(--ink-2); }
+.story p + p { margin-top: 18px; }
+@media (max-width: 900px) { .story { grid-template-columns: 1fr; gap: 32px; } }
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); gap: 0;
+  border: 1px solid var(--ink);
+}
+.timeline .ev {
+  padding: 32px 24px;
+  border-left: 1px solid var(--ink);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.timeline .ev:first-child { border-left: 0; }
+.timeline .yr { font-family: var(--f-display); font-size: 40px; line-height: 1; }
+.timeline .label { font-family: var(--f-mono); font-size: 10px; letter-spacing: .12em; color: var(--mute); text-transform: uppercase; }
+.timeline .title { font-family: var(--f-sans); font-weight: 800; font-size: 16px; }
+.timeline p { font-size: 13px; color: var(--ink-2); line-height: 1.5; }
+@media (max-width: 900px) {
+  .timeline { grid-template-columns: 1fr 1fr; }
+  .timeline .ev { border-left: 0; border-top: 1px solid var(--ink); }
+  .timeline .ev:nth-child(-n+2) { border-top: 0; }
+  .timeline .ev:nth-child(2n) { border-left: 1px solid var(--ink); }
+}
+
+.values {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+}
+.values .v {
+  padding: 48px 40px; border-left: 1px solid rgba(255,255,255,.12);
+  display: flex; flex-direction: column; gap: 16px;
+}
+.values .v:first-child { border-left: 0; }
+.values .ix { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; color: var(--hair-2); }
+.values h3 { font-family: var(--f-display); font-size: 40px; line-height: .95; text-transform: uppercase; }
+.values p { color: var(--hair-2); line-height: 1.6; font-size: 15px; }
+@media (max-width: 900px) {
+  .values { grid-template-columns: 1fr; }
+  .values .v { border-left: 0; border-top: 1px solid rgba(255,255,255,.12); padding: 32px 24px; }
+  .values .v:first-child { border-top: 0; }
+}
+
+.team {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.team .card-t {
+  border: 1px solid var(--ink);
+  display: flex; flex-direction: column;
+}
+.team .image {
+  aspect-ratio: 4 / 5;
+  background:
+    repeating-linear-gradient(135deg, var(--hair) 0 1px, transparent 1px 14px),
+    var(--snow);
+  position: relative;
+}
+.team .image .ph-tag {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--white); border: 1px solid var(--ink);
+  padding: 4px 8px;
+  font-family: var(--f-mono); font-size: 9px; letter-spacing: .12em;
+}
+.team .body { padding: 20px 24px 24px; border-top: 1px solid var(--ink); display:flex;flex-direction:column;gap:4px; }
+.team h4 { font-family: var(--f-display); font-size: 22px; text-transform: uppercase; }
+.team .role { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--mute); text-transform: uppercase; }
+.team .bio { font-size: 13px; color: var(--ink-2); margin-top: 8px; }
+@media (max-width: 900px) { .team { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body data-screen-label="About">
+
+<div id="sy-header"></div>
+
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-meta">
+      <div class="crumb"><a href="index.html">Standard Yoke</a> &nbsp;/&nbsp; <span style="color:var(--ink)">About</span></div>
+      <div>SY/STORY · ABOUT · 2026Q2</div>
+    </div>
+
+    <div class="page-title">
+      <div>
+        <div class="ix">08 / ABOUT</div>
+        <h1>Roof<br>manufacture<br><span class="yoke">since 1968.</span></h1>
+      </div>
+      <div>
+        <p class="lede">Standard Yoke has been part of the KwaZulu-Natal construction industry for over fifty years — quietly, dependably, on schedule. This is the company behind the trusses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Story">
+  <div class="container">
+    <div class="section-head">
+      <div class="num"><span>01</span> &nbsp; THE STORY</div>
+      <div class="meta">SY/STORY · NEW ERA</div>
+    </div>
+
+    <div class="story">
+      <div>
+        <span class="meta">SY · BR / HERITAGE</span>
+        <h2 style="margin-top:14px">A KZN<br>institution.<br><span class="yoke">A new chapter.</span></h2>
+      </div>
+      <div>
+        <p>Standard Yoke has been part of the KwaZulu-Natal construction industry since 1968. From the early 1980s the Walker family built the business into one of the region's most respected and relationship-driven roof truss manufacturers — known for engineering, MiTek-approved processes and a phone call that meant something.</p>
+        <p>In 2026, under new ownership, the business is entering a new era. The mission is unchanged: dependable manufacturing, honest communication, on-time delivery. But the offer has expanded — alongside trusses, Standard Yoke now stocks and supplies a growing range of roofing and building material products from one supplier, one invoice, one truck.</p>
+        <p>The goal is simple. Less admin for builders. Fewer suppliers to manage. More time on the build.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="surface--snow" data-screen-label="Timeline">
+  <div class="container">
+    <div class="section-head">
+      <div class="num"><span>02</span> &nbsp; TIMELINE</div>
+      <div class="meta">SY/STORY · 05 MILESTONES</div>
+    </div>
+
+    <div class="timeline">
+      <div class="ev">
+        <span class="label">MILESTONE</span>
+        <span class="yr">1968</span>
+        <span class="title">Founded</span>
+        <p>Standard Yoke established in Pietermaritzburg as a roof truss manufacturer.</p>
+      </div>
+      <div class="ev">
+        <span class="label">ERA</span>
+        <span class="yr">1980s</span>
+        <span class="title">Walker era</span>
+        <p>The Walker family build Standard Yoke into a region-leading manufacturer.</p>
+      </div>
+      <div class="ev">
+        <span class="label">SYSTEM</span>
+        <span class="yr">1990s</span>
+        <span class="title">MiTek</span>
+        <p>Standard Yoke becomes a MiTek-approved manufacturer.</p>
+      </div>
+      <div class="ev">
+        <span class="label">SYSTEM</span>
+        <span class="yr">2010s</span>
+        <span class="title">Ultra Span</span>
+        <p>Light-gauge steel truss systems added to the offer.</p>
+      </div>
+      <div class="ev">
+        <span class="label">ERA</span>
+        <span class="yr">2026</span>
+        <span class="title">New chapter</span>
+        <p>Expanded building material supply. Modern systems. Same trust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="surface--ink" data-screen-label="Values">
+  <div class="container">
+    <div class="section-head" style="border-color:var(--white)">
+      <div class="num" style="color:var(--white)"><span style="color:var(--hair-2)">03</span> &nbsp; HOW WE WORK</div>
+      <div class="meta" style="color:var(--hair-2)">SY-BR · VALUES · 2026Q2</div>
+    </div>
+
+    <div class="values">
+      <div class="v">
+        <span class="ix">01</span>
+        <h3>On the truck.</h3>
+        <p>Material doesn't help if it's still in the yard. We measure ourselves on what gets to site — not what sits in stock.</p>
+      </div>
+      <div class="v">
+        <span class="ix">02</span>
+        <h3>On schedule.</h3>
+        <p>Builders plan jobs around lead times. We protect the schedule. If we say Tuesday, it's Tuesday.</p>
+      </div>
+      <div class="v">
+        <span class="ix">03</span>
+        <h3>No stories.</h3>
+        <p>If something is going to be late, we say so. Early. Clearly. Then we fix it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Team">
+  <div class="container">
+    <div class="section-head">
+      <div class="num"><span>04</span> &nbsp; THE TEAM</div>
+      <div class="meta">SY/PEOPLE · KEY CONTACTS</div>
+    </div>
+
+    <div class="team">
+      <article class="card-t">
+        <div class="image"><span class="ph-tag">PORTRAIT · 4:5</span></div>
+        <div class="body">
+          <h4>Roofing Estimates</h4>
+          <span class="role">QUOTES · TRUSSES · ROOFING</span>
+          <p class="bio">First point of contact for truss and roofing enquiries. WhatsApp plans or specs and get a quote back.</p>
+          <p class="bio" style="font-family:var(--f-mono);font-size:12px;color:var(--ink)">074 384 9722<br>roofestimates@stdyoke.co.za</p>
+        </div>
+      </article>
+      <article class="card-t">
+        <div class="image"><span class="ph-tag">PORTRAIT · 4:5</span></div>
+        <div class="body">
+          <h4>Material Sales</h4>
+          <span class="role">QUOTES · MATERIALS · HARDWARE</span>
+          <p class="bio">Direct line for building material enquiries — doors, locks, hinges, boards, wire, fasteners.</p>
+          <p class="bio" style="font-family:var(--f-mono);font-size:12px;color:var(--ink)">064 611 4837<br>sales@stdyoke.co.za</p>
+        </div>
+      </article>
+      <article class="card-t">
+        <div class="image"><span class="ph-tag">PORTRAIT · 4:5</span></div>
+        <div class="body">
+          <h4>Branch · PMB</h4>
+          <span class="role">YARD · DELIVERIES · COLLECTIONS</span>
+          <p class="bio">74–80 Pentrich Road, Pietermaritzburg. Walk in for materials, collections or to chat through a job.</p>
+          <p class="bio" style="font-family:var(--f-mono);font-size:12px;color:var(--ink)">033 846 1300</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="surface--snow compact" data-screen-label="CTA">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;flex-wrap:wrap;padding:20px 0">
+      <div>
+        <div class="mono" style="color:var(--mute);margin-bottom:8px">SY/CONTACT</div>
+        <h2 class="h2">Want to work together? <span style="color:var(--yoke)">Get in touch.</span></h2>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn" href="contact.html">Request a quote <span class="arrow">→</span></a>
+        <a class="btn btn--ghost" href="https://wa.me/27743849722">WhatsApp estimates</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="sy-footer"></div>
+<script src="sy.js"></script>
+<script>SY.init({ active: 'about' });</script>
+</body>
+</html>

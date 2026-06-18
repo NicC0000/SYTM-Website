@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects · Standard Yoke</title>
+<meta name="description" content="Roof truss and roofing projects installed across KwaZulu-Natal — residential, commercial, and industrial.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+.page-hero { padding: 56px 0 0; }
+.page-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 56px; gap: 16px; flex-wrap: wrap;
+}
+.page-meta .crumb a { color: var(--mute); }
+
+.page-title {
+  display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end;
+  padding-bottom: 56px; border-bottom: 1px solid var(--ink);
+}
+.page-title h1 { font-family: var(--f-display); font-size: clamp(64px, 11vw, 168px); line-height: .85; text-transform: uppercase; }
+.page-title h1 .yoke { color: var(--yoke); }
+.page-title .lede { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 36ch; }
+.page-title .ix { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--mute); margin-bottom: 12px; }
+@media (max-width: 900px) { .page-title { grid-template-columns: 1fr; gap: 24px; } }
+
+/* Filter row */
+.filter-row {
+  display: flex; gap: 0; flex-wrap: wrap;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: 48px;
+  background: var(--white);
+}
+.filter-row button {
+  padding: 16px 22px;
+  font-family: var(--f-mono);
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  background: transparent;
+  border: 0; border-right: 1px solid var(--hair);
+  color: var(--mute);
+  transition: background .15s, color .15s;
+}
+.filter-row button:hover { color: var(--ink); }
+.filter-row button.is-on { background: var(--ink); color: var(--white); }
+.filter-row .count { margin-left: auto; padding: 16px 22px; font-family: var(--f-mono); font-size: 11px; color: var(--mute); }
+
+/* Projects grid */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.proj-card {
+  border: 1px solid var(--ink);
+  background: var(--white);
+  display: flex; flex-direction: column;
+  transition: transform .25s ease;
+}
+.proj-card:hover { transform: translateY(-4px); }
+.proj-card .image {
+  aspect-ratio: 4 / 3;
+  background:
+    repeating-linear-gradient(135deg, var(--hair) 0 1px, transparent 1px 14px),
+    var(--snow);
+  position: relative;
+}
+.proj-card .image .ph-tag {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--white); border: 1px solid var(--ink);
+  padding: 4px 8px;
+  font-family: var(--f-mono); font-size: 9px; letter-spacing: .12em;
+}
+.proj-card .image .yr {
+  position: absolute; bottom: 12px; right: 12px;
+  font-family: var(--f-mono); font-size: 10px; color: var(--mute);
+}
+.proj-card .body { padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--ink); }
+.proj-card .meta { display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 10px; letter-spacing: .1em; color: var(--mute); text-transform: uppercase; }
+.proj-card h3 { font-family: var(--f-display); font-size: 22px; line-height: 1.05; text-transform: uppercase; margin: 4px 0; }
+.proj-card .spec { display: flex; gap: 12px; font-family: var(--f-mono); font-size: 11px; color: var(--ink-2); }
+.proj-card .spec span { padding: 4px 8px; border: 1px solid var(--hair); }
+
+@media (max-width: 900px) { .proj-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .proj-grid { grid-template-columns: 1fr; } }
+
+/* Stat band */
+.stat-band {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  border: 1px solid var(--ink);
+  background: var(--ink); color: var(--white);
+  margin-top: 64px;
+}
+.stat-band .s {
+  padding: 32px;
+  border-left: 1px solid rgba(255,255,255,.15);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.stat-band .s:first-child { border-left: 0; }
+.stat-band .n { font-family: var(--f-display); font-size: 56px; line-height: 1; }
+.stat-band .l { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; color: var(--hair-2); text-transform: uppercase; }
+@media (max-width: 900px) { .stat-band { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body data-screen-label="Projects">
+
+<div id="sy-header"></div>
+
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-meta">
+      <div class="crumb"><a href="index.html">Standard Yoke</a> &nbsp;/&nbsp; <span style="color:var(--ink)">Projects</span></div>
+      <div>SY/PROJ · INSTALLATIONS · 2026Q2</div>
+    </div>
+
+    <div class="page-title">
+      <div>
+        <div class="ix">07 / PROJECTS</div>
+        <h1>Projects<br>&amp; installations<br><span class="yoke">across KZN.</span></h1>
+      </div>
+      <div>
+        <p class="lede">A selection of recent and historic Standard Yoke roof truss and roofing projects — residential, commercial and industrial — installed across KwaZulu-Natal.</p>
+        <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">
+          <a class="btn" href="contact.html">Quote your project <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Gallery">
+  <div class="container">
+    <div class="section-head">
+      <div class="num"><span>01</span> &nbsp; INSTALLATIONS</div>
+      <div class="meta">SY/PROJ · 12 PROJECTS</div>
+    </div>
+
+    <div class="filter-row" id="proj-filter">
+      <button data-cat="all" class="is-on">All</button>
+      <button data-cat="residential">Residential</button>
+      <button data-cat="commercial">Commercial</button>
+      <button data-cat="industrial">Industrial</button>
+      <button data-cat="timber">Timber</button>
+      <button data-cat="ultraspan">Ultra Span</button>
+      <button data-cat="roofing">Roofing</button>
+      <span class="count" id="proj-count">12 PROJECTS</span>
+    </div>
+
+    <div class="proj-grid" id="proj-grid">
+      <!-- 12 projects -->
+      <article class="proj-card" data-cats="residential timber">
+        <div class="image"><span class="ph-tag">JOB · TIMBER · 4:3</span><span class="yr">2025</span></div>
+        <div class="body">
+          <div class="meta"><span>RES-014</span><span>HILLCREST</span></div>
+          <h3>Hillcrest residential roof</h3>
+          <div class="spec"><span>9m span</span><span>27.5°</span><span>Timber</span></div>
+        </div>
+      </article>
+      <article class="proj-card" data-cats="commercial ultraspan">
+        <div class="image"><span class="ph-tag">JOB · ULTRA SPAN</span><span class="yr">2025</span></div>
+        <div class="body">
+          <div class="meta"><span>COM-022</span><span>CATO RIDGE</span></div>
+          <h3>Cato Ridge warehouse</h3>
+          <div class="spec"><span>22m span</span><span>10°</span><span>Steel</span></div>
+        </div>
+      </article>
+      <article class="proj-card" data-cats="commercial roofing">
+        <div class="image"><span class="ph-tag">JOB · IBR SHEETING</span><span class="yr">2024</span></div>
+        <div class="body">
+          <div class="meta"><span>COM-031</span><span>HAMMARSDALE</span></div>
+          <h3>Hammarsdale factory re-roof</h3>
+          <div class="spec"><span>IBR</span><span>0.55mm</span><span>Insulated</span></div>
+        </div>
+      </article>
+      <article class="proj-card" data-cats="residential roofing">
+        <div class="image"><span class="ph-tag">JOB · TILE ROOF</span><span class="yr">2024</span></div>
+        <div class="body">
+          <div class="meta"><span>RES-045</span><span>WESTVILLE</span></div>
+          <h3>Westville heritage retile</h3>
+          <div class="spec"><span>Tile</span><span>Clay</span><span>Bond</span></div>
+        </div>
+      </article>
+      <article class="proj-card" data-cats="industrial ultraspan">
+        <div class="image"><span class="ph-tag">JOB · INDUSTRIAL</span><span class="yr">2024</span></div>
+        <div class="body">
+          <div class="meta"><span>IND-007</span><span>PINETOWN</span></div>
+          <h3>Pinetown industrial roof</h3>
+          <div class="spec"><span>30m span</span><span>5°</span><span>Steel</span></div>
+        </div>
+      </article>
+      <article class="proj-card" data-cats="residential timber">
+        <div class="image"><span class="ph-tag">JOB · KING POST</span><span class="yr">2024</span></div>
+        <div class="body">
+          <div class="meta"><span>RES-052</span><span>HOWICK</span></div>
+          <h3>Howick farmstead</h3>
+          <div class="spec"><span>12m span</span><span>30°</span><span>Timber</span></div>
+        </div>
+      </article>
+      <article class="proj-card" data-cats="commercial timber">
+        <div class="image"><span class="ph-tag">JOB · TIMBER</span><span class="yr">2023</span></div>
+        <div class="body">
+          <div class="meta"><span>COM-067</span><span>PMB CBD</span></div>
+          <h3>PMB office reroof</h3>
+          <div class="spec"><span>8m span</span><span>25°</span><span>Timber</span></div>
+        </div>
+      </article>
+      <article class="proj-card" data-cats="residential ultraspan">
+        <div class="image"><span class="ph-tag">JOB · ULTRA SPAN</span><span class="yr">2023</span></div>
+        <div class="body">
+          <div class="meta"><span>RES-070</span><span>BALLITO</span></div>
+          <h3>Ballito coastal home</h3>
+          <div class="spec"><span>14m span</span><span>22°</span><span>Steel</span></div>
+        </div>
+      </article>
+      <article class="proj-card" data-cats="industrial roofing">
+        <div class="image"><span class="ph-tag">JOB · KLIP-LOK</span><span class="yr">2023</span></div>
+        <div class="body">
+          <div class="meta"><span>IND-018</span><span>UMHLANGA</span></div>
+          <h3>Umhlanga distribution centre</h3>
+          <div class="spec"><span>Klip-lok</span><span>0.58mm</span><span>Concealed</span></div>
+        </div>
+      </article>
+      <article class="proj-card" data-cats="residential timber">
+        <div class="image"><span class="ph-tag">JOB · TIMBER</span><span class="yr">2022</span></div>
+        <div class="body">
+          <div class="meta"><span>RES-088</span><span>KLOOF</span></div>
+          <h3>Kloof double-storey</h3>
+          <div class="spec"><span>10m span</span><span>32°</span><span>Timber</span></div>
+        </div>
+      </article>
+      <article class="proj-card" data-cats="commercial ultraspan">
+        <div class="image"><span class="ph-tag">JOB · ULTRA SPAN</span><span class="yr">2022</span></div>
+        <div class="body">
+          <div class="meta"><span>COM-104</span><span>PMB</span></div>
+          <h3>PMB retail centre</h3>
+          <div class="spec"><span>18m span</span><span>12°</span><span>Steel</span></div>
+        </div>
+      </article>
+      <article class="proj-card" data-cats="residential roofing">
+        <div class="image"><span class="ph-tag">JOB · ROOFING</span><span class="yr">2022</span></div>
+        <div class="body">
+          <div class="meta"><span>RES-119</span><span>SHEFFIELD BEACH</span></div>
+          <h3>Sheffield Beach build</h3>
+          <div class="spec"><span>Klip-lok</span><span>Insulated</span><span>Trims</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="stat-band">
+      <div class="s"><div class="n">58<span style="color:var(--sky)">+</span></div><div class="l">Years in business</div></div>
+      <div class="s"><div class="n" style="font-size:32px;color:var(--hair-2)">TBC</div><div class="l">Roof systems delivered · pending system pull</div></div>
+      <div class="s"><div class="n">100%</div><div class="l">MiTek-approved</div></div>
+      <div class="s"><div class="n">KZN</div><div class="l">Coverage area</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="surface--snow compact" data-screen-label="CTA">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;flex-wrap:wrap;padding:20px 0">
+      <div>
+        <div class="mono" style="color:var(--mute);margin-bottom:8px">SY/CONTACT</div>
+        <h2 class="h2">Got a project? <span style="color:var(--yoke)">Get a quote.</span></h2>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn" href="contact.html">Request a quote <span class="arrow">→</span></a>
+        <a class="btn btn--ghost" href="https://wa.me/27743849722">WhatsApp estimates</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="sy-footer"></div>
+<script src="sy.js"></script>
+<script>SY.init({ active: 'projects' });</script>
+<script>
+  // filter
+  const buttons = document.querySelectorAll('#proj-filter button');
+  const cards = document.querySelectorAll('#proj-grid .proj-card');
+  const count = document.getElementById('proj-count');
+  buttons.forEach(b => b.addEventListener('click', () => {
+    buttons.forEach(x => x.classList.remove('is-on'));
+    b.classList.add('is-on');
+    const cat = b.getAttribute('data-cat');
+    let shown = 0;
+    cards.forEach(c => {
+      const cats = c.getAttribute('data-cats').split(' ');
+      const show = cat === 'all' || cats.includes(cat);
+      c.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+    count.textContent = shown + ' PROJECTS';
+  }));
+</script>
+</body>
+</html>

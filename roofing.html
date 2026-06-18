@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roofing · Standard Yoke</title>
+<meta name="description" content="Roof tiles, sheeting, flashings, insulation and ceiling systems — stocked and supplied across KwaZulu-Natal.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+.page-hero { padding: 56px 0 0; }
+.page-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 56px; gap: 16px; flex-wrap: wrap;
+}
+.page-meta .crumb a { color: var(--mute); }
+.page-meta .crumb a:hover { color: var(--ink); }
+
+.page-title {
+  display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end;
+  padding-bottom: 56px; border-bottom: 1px solid var(--ink);
+}
+.page-title h1 { font-family: var(--f-display); font-size: clamp(64px, 11vw, 168px); line-height: .85; letter-spacing: -0.02em; text-transform: uppercase; }
+.page-title h1 .yoke { color: var(--yoke); }
+.page-title .lede { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 36ch; }
+.page-title .ix { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--mute); margin-bottom: 12px; }
+@media (max-width: 900px) { .page-title { grid-template-columns: 1fr; gap: 24px; } }
+
+/* Product category card */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid var(--ink);
+}
+.cat-grid .cat {
+  border-left: 1px solid var(--ink);
+  border-top: 1px solid var(--ink);
+  display: grid; grid-template-columns: 1fr 1fr; min-height: 360px;
+  background: var(--white);
+}
+.cat-grid .cat:nth-child(-n+2) { border-top: 0; }
+.cat-grid .cat:nth-child(2n+1) { border-left: 0; }
+.cat-grid .cat .image {
+  background: var(--snow);
+  border-right: 1px solid var(--hair);
+  position: relative;
+  background-image: repeating-linear-gradient(135deg, var(--hair) 0 1px, transparent 1px 14px);
+}
+.cat-grid .cat .image .ph-tag {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--white); border: 1px solid var(--ink);
+  padding: 4px 8px;
+  font-family: var(--f-mono); font-size: 9px; letter-spacing: .12em;
+}
+.cat-grid .cat .body { padding: 32px; display: flex; flex-direction: column; gap: 16px; }
+.cat-grid .cat .body .ix { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--mute); }
+.cat-grid .cat .body h3 { font-family: var(--f-display); font-size: 36px; line-height: 1; text-transform: uppercase; }
+.cat-grid .cat .body ul { display: grid; gap: 6px; font-size: 13px; }
+.cat-grid .cat .body li { display: flex; gap: 10px; color: var(--ink-2); }
+.cat-grid .cat .body li::before { content: ""; width: 8px; height: 1px; background: var(--ink); flex-shrink: 0; margin-top: 9px; }
+.cat-grid .cat .body .cta { margin-top: auto; font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--yoke); }
+.cat-grid .cat:hover { background: var(--snow); }
+
+@media (max-width: 900px) {
+  .cat-grid { grid-template-columns: 1fr; }
+  .cat-grid .cat { grid-template-columns: 1fr; border-left: 0; border-top: 1px solid var(--ink); }
+  .cat-grid .cat:first-child { border-top: 0; }
+  .cat-grid .cat .image { border-right: 0; border-bottom: 1px solid var(--hair); min-height: 200px; }
+}
+
+/* Stocked brands */
+.brand-strip {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
+  border: 1px solid var(--ink);
+}
+.brand-strip .b {
+  padding: 24px 16px;
+  border-left: 1px solid var(--hair);
+  font-family: var(--f-display); font-size: 18px; text-transform: uppercase;
+  text-align: center; color: var(--mute);
+  display: flex; align-items: center; justify-content: center;
+}
+.brand-strip .b:first-child { border-left: 0; }
+@media (max-width: 900px) {
+  .brand-strip { grid-template-columns: 1fr 1fr 1fr; }
+  .brand-strip .b { border-top: 1px solid var(--hair); }
+  .brand-strip .b:nth-child(-n+3) { border-top: 0; }
+  .brand-strip .b:nth-child(3n+1) { border-left: 0; }
+}
+</style>
+</head>
+<body data-screen-label="Roofing">
+
+<div id="sy-header"></div>
+
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-meta">
+      <div class="crumb"><a href="index.html">Standard Yoke</a> &nbsp;/&nbsp; <span style="color:var(--ink)">Roofing</span></div>
+      <div>SY/PROD · ROOFING · 2026Q2</div>
+    </div>
+
+    <div class="page-title">
+      <div>
+        <div class="ix">05 / ROOFING</div>
+        <h1>Roofing<br>products.<br><span class="yoke">Stocked. Delivered.</span></h1>
+      </div>
+      <div>
+        <p class="lede">Tiles, sheeting, flashings, insulation and ceilings. Trusted SA brands, stocked locally, on the truck to your site across KZN.</p>
+        <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">
+          <a class="btn" href="contact.html">Request a quote <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="https://wa.me/27743849722">WhatsApp roofing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Categories">
+  <div class="container">
+    <div class="section-head">
+      <div class="num"><span>01</span> &nbsp; ROOFING PRODUCTS</div>
+      <div class="meta">SY/RANGE · 06 CATEGORIES</div>
+    </div>
+
+    <div class="cat-grid">
+      <div class="cat">
+        <div class="image"><span class="ph-tag">PRODUCT · TILES</span></div>
+        <div class="body">
+          <span class="ix">SY-R01</span>
+          <h3>Roof Tiles</h3>
+          <ul>
+            <li>Concrete tiles · multiple profiles</li>
+            <li>Clay tiles · local and imported</li>
+            <li>Fittings · ridges · valleys</li>
+          </ul>
+          <span class="cta">Quote on tiles →</span>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="image"><span class="ph-tag">PRODUCT · SHEETING</span></div>
+        <div class="body">
+          <span class="ix">SY-R02</span>
+          <h3>Roof Sheeting</h3>
+          <ul>
+            <li>IBR · corrugated · Klip-lok</li>
+            <li>Coated, galvanised, AZ150 options</li>
+            <li>Cut to length, delivered</li>
+          </ul>
+          <span class="cta">Quote on sheeting →</span>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="image"><span class="ph-tag">PRODUCT · FLASHINGS</span></div>
+        <div class="body">
+          <span class="ix">SY-R03</span>
+          <h3>Flashings</h3>
+          <ul>
+            <li>Custom &amp; standard flashings</li>
+            <li>Ridges, barge boards, valley sets</li>
+            <li>Matched to sheet colour</li>
+          </ul>
+          <span class="cta">Quote on flashings →</span>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="image"><span class="ph-tag">PRODUCT · INSULATION</span></div>
+        <div class="body">
+          <span class="ix">SY-R04</span>
+          <h3>Insulation</h3>
+          <ul>
+            <li>Isoboard · Aerolite · Isotherm</li>
+            <li>Reflective foil &amp; sisalation</li>
+            <li>Thermal &amp; acoustic specs to suit</li>
+          </ul>
+          <span class="cta">Quote on insulation →</span>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="image"><span class="ph-tag">PRODUCT · CEILINGS</span></div>
+        <div class="body">
+          <span class="ix">SY-R05</span>
+          <h3>Ceiling Systems</h3>
+          <ul>
+            <li>Jumbo Board · PVC ceiling boards</li>
+            <li>Rhino board &amp; gypsum systems</li>
+            <li>Brandering, cornices, fittings</li>
+          </ul>
+          <span class="cta">Quote on ceilings →</span>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="image"><span class="ph-tag">PRODUCT · FASTENERS</span></div>
+        <div class="body">
+          <span class="ix">SY-R06</span>
+          <h3>Roofing Fasteners</h3>
+          <ul>
+            <li>Roofing screws &amp; nails</li>
+            <li>Tek screws &amp; bolts</li>
+            <li>Specified for sheet &amp; substrate</li>
+          </ul>
+          <span class="cta">Quote on fasteners →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="surface--snow" data-screen-label="Brands">
+  <div class="container">
+    <div class="section-head">
+      <div class="num"><span>02</span> &nbsp; STOCKED BRANDS</div>
+      <div class="meta">SY/SUPPLIERS · TRUSTED ONLY</div>
+    </div>
+
+    <p class="lead" style="margin-bottom:32px;max-width:64ch">Trusted South African brands. If you can spec it, we can supply it. If we don't have it, it's on the next truck.</p>
+
+    <div class="brand-strip">
+      <div class="b">MITEK</div>
+      <div class="b">ISOBOARD</div>
+      <div class="b">AEROLITE</div>
+      <div class="b">SAFAL</div>
+      <div class="b">CLOTAN</div>
+      <div class="b">MARLEY</div>
+    </div>
+  </div>
+</section>
+
+<section class="surface--ink" data-screen-label="CTA">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;flex-wrap:wrap">
+      <div>
+        <div class="mono" style="color:var(--hair-2);margin-bottom:12px">SY/CONTACT · ROOFING</div>
+        <h2 class="h1" style="color:var(--white)">Spec it. <span style="color:var(--sky)">Truck it.</span> Done.</h2>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn--white" href="contact.html">Request a quote <span class="arrow">→</span></a>
+        <a class="btn btn--white" style="background:transparent;color:var(--white);border-color:var(--white)" href="https://wa.me/27743849722">WhatsApp roofing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="sy-footer"></div>
+<script src="sy.js"></script>
+<script>SY.init({ active: 'roofing' });</script>
+</body>
+</html>

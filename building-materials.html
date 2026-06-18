@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Building Materials · Standard Yoke</title>
+<meta name="description" content="Locksets, hinges, padlocks, door closers, boards, wire and door hardware — premium quality, trusted brands, built for Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+.page-hero { padding: 56px 0 0; }
+.page-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 56px; gap: 16px; flex-wrap: wrap;
+}
+.page-meta .crumb a { color: var(--mute); }
+.page-title {
+  display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end;
+  padding-bottom: 56px; border-bottom: 1px solid var(--ink);
+}
+.page-title h1 { font-family: var(--f-display); font-size: clamp(64px, 11vw, 168px); line-height: .85; text-transform: uppercase; }
+.page-title h1 .yoke { color: var(--yoke); }
+.page-title .lede { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 36ch; }
+.page-title .ix { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: var(--mute); margin-bottom: 12px; }
+@media (max-width: 900px) { .page-title { grid-template-columns: 1fr; gap: 24px; } }
+
+/* NEW RANGE callout (replicates flyer voice) */
+.new-range {
+  background: var(--ink); color: var(--white);
+  border: 1px solid var(--ink);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  margin-bottom: 56px;
+}
+.new-range .copy { padding: 56px 48px; display: flex; flex-direction: column; gap: 20px; }
+.new-range .copy .ix { font-family: var(--f-mono); font-size: 11px; letter-spacing: .12em; color: var(--hair-2); }
+.new-range .copy h2 { font-family: var(--f-display); font-size: clamp(44px, 6vw, 80px); line-height: .9; text-transform: uppercase; }
+.new-range .copy .stamp {
+  display: inline-block;
+  background: var(--sky); color: var(--white);
+  font-family: var(--f-display); font-size: 28px;
+  padding: 8px 16px;
+  align-self: flex-start;
+}
+.new-range .copy .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.new-range .copy .tag {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,.25);
+  padding: 6px 10px;
+  color: var(--hair-2);
+}
+
+.new-range .display-area {
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0 1px, transparent 1px 14px),
+    var(--ink-2);
+  border-left: 1px solid rgba(255,255,255,.15);
+  padding: 32px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  min-height: 360px;
+}
+.new-range .display-area::before {
+  content: "PRODUCT · PHOTOGRAPHY"; position: absolute;
+  top: 12px; left: 16px;
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: .12em; color: var(--hair-2);
+}
+.new-range .display-area .slot {
+  border: 1px dashed rgba(255,255,255,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: .12em;
+  color: rgba(255,255,255,.45);
+  aspect-ratio: 1;
+}
+
+@media (max-width: 900px) {
+  .new-range { grid-template-columns: 1fr; }
+  .new-range .display-area { border-left: 0; border-top: 1px solid rgba(255,255,255,.15); }
+}
+
+/* PILLAR badges row (from flyer "PREMIUM QUALITY · TRUSTED BRANDS · BUILT FOR AFRICA · TRADE ACCOUNTS") */
+.badges {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  border: 1px solid var(--ink);
+  background: var(--yoke);
+  color: var(--white);
+}
+.badges .b {
+  padding: 28px 24px;
+  border-left: 1px solid rgba(255,255,255,.2);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.badges .b:first-child { border-left: 0; }
+.badges .b .ix { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; color: rgba(255,255,255,.7); }
+.badges .b .title { font-family: var(--f-display); font-size: 20px; line-height: 1; text-transform: uppercase; }
+.badges .b .sub { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; color: rgba(255,255,255,.85); }
+@media (max-width: 900px) {
+  .badges { grid-template-columns: 1fr 1fr; }
+  .badges .b { border-left: 0 !important; border-top: 1px solid rgba(255,255,255,.2); }
+  .badges .b:nth-child(-n+2) { border-top: 0; }
+  .badges .b:nth-child(2n+1) { border-left: 0 !important; }
+}
+
+/* Catalogue grid: products */
+.cat-list {
+  border: 1px solid var(--ink);
+}
+.cat-list > .row {
+  display: grid; grid-template-columns: 100px 1fr 2fr 1fr;
+  align-items: center;
+  border-top: 1px solid var(--hair);
+  padding: 18px 24px;
+  gap: 20px;
+}
+.cat-list > .row.head {
+  background: var(--snow); border-top: 0;
+  font-family: var(--f-mono); font-size: 10px; letter-spacing: .12em; color: var(--mute); text-transform: uppercase;
+  padding: 14px 24px;
+}
+.cat-list > .row:hover:not(.head) { background: var(--snow); }
+.cat-list .sku { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; color: var(--mute); }
+.cat-list .name { font-weight: 700; font-size: 15px; }
+.cat-list .desc { font-size: 13px; color: var(--ink-2); }
+.cat-list .tag { font-family: var(--f-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--yoke); justify-self: end; }
+
+@media (max-width: 900px) {
+  .cat-list > .row { grid-template-columns: 1fr; gap: 6px; }
+  .cat-list > .row.head { display: none; }
+  .cat-list .tag { justify-self: start; }
+}
+</style>
+</head>
+<body data-screen-label="Building Materials">
+
+<div id="sy-header"></div>
+
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-meta">
+      <div class="crumb"><a href="index.html">Standard Yoke</a> &nbsp;/&nbsp; <span style="color:var(--ink)">Building Materials</span></div>
+      <div>SY/PROD · MATERIALS · 2026Q2</div>
+    </div>
+
+    <div class="page-title">
+      <div>
+        <div class="ix">06 / BUILDING MATERIALS</div>
+        <h1>Doors.<br>Hardware. Fixings.<br><span class="yoke">One truck.</span></h1>
+      </div>
+      <div>
+        <p class="lede">Locksets, mortices, hinges, padlocks, closers — plus boards, wire and fasteners. Trade-grade locks and fittings, stocked, on the truck across KZN.</p>
+        <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">
+          <a class="btn" href="contact.html">Request a quote <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="https://wa.me/27646114837">WhatsApp materials</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="New Range">
+  <div class="container">
+    <div class="section-head">
+      <div class="num"><span>01</span> &nbsp; NEW PRODUCT RANGE</div>
+      <div class="meta">SY/RANGE · 2026 EXPANSION</div>
+    </div>
+
+    <article class="new-range">
+      <div class="copy">
+        <div class="ix">01 / NEW</div>
+        <h2>New product<br>range.</h2>
+        <div class="stamp">NOW IN STOCK</div>
+        <p style="color:var(--hair-2);max-width:42ch">A new range of door hardware — locksets, mortice locks, hinges, padlocks, cylinders and door closers — added to the Standard Yoke catalogue. Specified for the conditions, priced for the trade.</p>
+        <div class="tags">
+          <span class="tag">QUALITY</span>
+          <span class="tag">STRENGTH</span>
+          <span class="tag">RELIABILITY</span>
+        </div>
+      </div>
+      <div class="display-area">
+        <div class="slot">LOCKSET</div>
+        <div class="slot">MORTICE</div>
+        <div class="slot">HINGES</div>
+        <div class="slot">CYLINDER</div>
+        <div class="slot">PADLOCK</div>
+        <div class="slot">DOOR CLOSER</div>
+      </div>
+    </article>
+
+    <div class="badges">
+      <div class="b">
+        <span class="ix">01</span>
+        <span class="title">Premium Quality</span>
+        <span class="sub">Trusted, graded, tested.</span>
+      </div>
+      <div class="b">
+        <span class="ix">02</span>
+        <span class="title">Trusted Brands</span>
+        <span class="sub">BBL · Lock Worx · Marley · MiTek.</span>
+      </div>
+      <div class="b">
+        <span class="ix">03</span>
+        <span class="title">Built for Africa</span>
+        <span class="sub">Specified for the conditions.</span>
+      </div>
+      <div class="b">
+        <span class="ix">04</span>
+        <span class="title">Trade Accounts</span>
+        <span class="sub">Apply via sales.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Catalogue">
+  <div class="container">
+    <div class="section-head">
+      <div class="num"><span>02</span> &nbsp; CATALOGUE — DOOR HARDWARE</div>
+      <div class="meta">SY/CAT · 02 SUMMARY</div>
+    </div>
+
+    <p class="lead" style="margin-bottom:24px;max-width:64ch">In-stock door hardware. Pricing, sizes and finishes on request — or download the full catalogue.</p>
+
+    <div class="cat-list">
+      <div class="row head">
+        <span>SKU</span><span>NAME</span><span>DESCRIPTION</span><span>SPEC</span>
+      </div>
+      <div class="row">
+        <span class="sku">SY-LK-021</span>
+        <span class="name">2 Lever Lourie</span>
+        <span class="desc">Stylish 2-lever key lockset · brushed steel.</span>
+        <span class="tag">RES · SS</span>
+      </div>
+      <div class="row">
+        <span class="sku">SY-LK-022</span>
+        <span class="name">2 Lever Econo</span>
+        <span class="desc">Entry-level 2-lever key lockset · economy.</span>
+        <span class="tag">RES · STD</span>
+      </div>
+      <div class="row">
+        <span class="sku">SY-LK-031</span>
+        <span class="name">3 Lever Shale</span>
+        <span class="desc">3-lever key lockset · refined profile.</span>
+        <span class="tag">RES · SS</span>
+      </div>
+      <div class="row">
+        <span class="sku">SY-LK-032</span>
+        <span class="name">3 Lever Diamond</span>
+        <span class="desc">3-lever key lockset · diamond plate detail.</span>
+        <span class="tag">RES · SS</span>
+      </div>
+      <div class="row">
+        <span class="sku">SY-LK-033</span>
+        <span class="name">3 Lever Chrystal</span>
+        <span class="desc">3-lever key lockset · matte black.</span>
+        <span class="tag">RES · MB</span>
+      </div>
+      <div class="row">
+        <span class="sku">SY-LK-034</span>
+        <span class="name">3 Lever Goldstone</span>
+        <span class="desc">3-lever key lockset · gold finish.</span>
+        <span class="tag">RES · BR</span>
+      </div>
+      <div class="row">
+        <span class="sku">SY-MT-201</span>
+        <span class="name">2 Lever Upright Mortice</span>
+        <span class="desc">Mortice lock body · 2-lever upright.</span>
+        <span class="tag">COMM</span>
+      </div>
+      <div class="row">
+        <span class="sku">SY-MT-301</span>
+        <span class="name">3 Lever Upright Mortice</span>
+        <span class="desc">Mortice lock body · 3-lever upright.</span>
+        <span class="tag">COMM</span>
+      </div>
+      <div class="row">
+        <span class="sku">SY-MT-EU1</span>
+        <span class="name">Euro Mortice — SS</span>
+        <span class="desc">Euro profile mortice lock · satin stainless.</span>
+        <span class="tag">EURO · SS</span>
+      </div>
+      <div class="row">
+        <span class="sku">SY-MT-EU2</span>
+        <span class="name">Euro Mortice — Black</span>
+        <span class="desc">Euro profile mortice lock · black finish.</span>
+        <span class="tag">EURO · MB</span>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap">
+      <a class="btn" href="contact.html">Quote on hardware <span class="arrow">→</span></a>
+      <span class="btn btn--ghost" style="opacity:.5;cursor:default" aria-disabled="true">Full catalogue — coming soon</span>
+    </div>
+  </div>
+</section>
+
+<section class="surface--snow" data-screen-label="Categories">
+  <div class="container">
+    <div class="section-head">
+      <div class="num"><span>03</span> &nbsp; OTHER MATERIALS</div>
+      <div class="meta">SY/RANGE · ALSO IN STOCK</div>
+    </div>
+
+    <div class="col-4">
+      <div class="card">
+        <div class="card-num">M-01</div>
+        <h3 style="font-family:var(--f-display);font-size:28px;text-transform:uppercase">Boards</h3>
+        <p style="font-size:14px;color:var(--ink-2)">MDF, plywood, chipboard, OSB, gypsum.</p>
+        <a class="card-cta" href="contact.html">Quote</a>
+      </div>
+      <div class="card">
+        <div class="card-num">M-02</div>
+        <h3 style="font-family:var(--f-display);font-size:28px;text-transform:uppercase">Wire</h3>
+        <p style="font-size:14px;color:var(--ink-2)">Brick force, binding, fence, barbed.</p>
+        <a class="card-cta" href="contact.html">Quote</a>
+      </div>
+      <div class="card">
+        <div class="card-num">M-03</div>
+        <h3 style="font-family:var(--f-display);font-size:28px;text-transform:uppercase">Doors</h3>
+        <p style="font-size:14px;color:var(--ink-2)">Interior, exterior, frames, hardware.</p>
+        <a class="card-cta" href="contact.html">Quote</a>
+      </div>
+      <div class="card">
+        <div class="card-num">M-04</div>
+        <h3 style="font-family:var(--f-display);font-size:28px;text-transform:uppercase">Trade</h3>
+        <p style="font-size:14px;color:var(--ink-2)">Fasteners, anchors, fixings &amp; site essentials.</p>
+        <a class="card-cta" href="contact.html">Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="surface--ink" data-screen-label="CTA">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;flex-wrap:wrap">
+      <div>
+        <div class="mono" style="color:var(--hair-2);margin-bottom:12px">SY/CONTACT · MATERIALS</div>
+        <h2 class="h1" style="color:var(--white)">One supplier. <span style="color:var(--sky)">One invoice. One truck.</span></h2>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn--white" href="contact.html">Request a quote <span class="arrow">→</span></a>
+        <a class="btn btn--white" style="background:transparent;color:var(--white);border-color:var(--white)" href="https://wa.me/27646114837">WhatsApp materials</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="sy-footer"></div>
+<script src="sy.js"></script>
+<script>SY.init({ active: 'materials' });</script>
+</body>
+</html>
